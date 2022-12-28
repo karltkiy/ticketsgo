@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6, hr, p, figure {
     display: block;
     font-size: 1em;
@@ -15,7 +19,7 @@ h1, h2, h3, h4, h5, h6, hr, p, figure {
     opacity: 1;
 }
 
-ul, ul {
+ul {
     display: block;
     margin: 0;
     padding: 0;
@@ -23,6 +27,15 @@ ul, ul {
 
 li {
     display: block;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+    align-items: normal;
 }
 
 body {
@@ -37,6 +50,19 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header {
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 @media (max-width: 99999px) {
@@ -73,6 +99,14 @@ code {
         display: none;
     }
 
+    .xxs\:show {
+        display: none;
+    }
+
+    .tn\:show {
+        display: none;
+    }
+
     .max\:hide {
         display: none;
     }
@@ -81,6 +115,7 @@ code {
 @media (max-width: 2999px) {
     .xxxl\:show {
         display: flex;
+        flex-direction: column;
     }
 
     .xxxl\:hide {
@@ -91,6 +126,7 @@ code {
 @media (max-width: 1919px) {
     .xxl\:show {
         display: flex;
+        flex-direction: column;
     }
 
     .xxl\:hide {
@@ -101,6 +137,7 @@ code {
 @media (max-width: 1399px) {
     .xl\:show {
         display: flex;
+        flex-direction: column;
     }
 
     .xl\:hide {
@@ -111,6 +148,7 @@ code {
 @media (max-width: 1199px) {
     .lg\:show {
         display: flex;
+        flex-direction: column;
     }
 
     .lg\:hide {
@@ -121,6 +159,7 @@ code {
 @media (max-width: 991px) {
     .md\:show {
         display: flex;
+        flex-direction: column;
     }
 
     .md\:hide {
@@ -131,6 +170,7 @@ code {
 @media (max-width: 767px) {
     .sm\:show {
         display: flex;
+        flex-direction: column;
     }
 
     .sm\:hide {
@@ -141,6 +181,8 @@ code {
 @media (max-width: 575px) {
     .xs\:show {
         display: flex;
+        flex-direction: column;
+
     }
 
     .xs\:hide {
@@ -148,21 +190,24 @@ code {
     }
 }
 
-.headroom {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10000;
+@media (max-width: 480px) {
+    .xxs\:show {
+        display: flex;
+        flex-direction: column;
+    }
 
-    will-change: transform;
-    transition: transform 200ms linear;
+    .xxs\:hide {
+        display: none;
+    }
 }
 
-.headroom--pinned {
-    transform: translateY(0%);
-}
+@media (max-width: 384px) {
+    .tn\:show {
+        display: flex;
+        flex-direction: column;
+    }
 
-.headroom--unpinned {
-    transform: translateY(-100%);
+    .tn\:hide {
+        display: none;
+    }
 }
